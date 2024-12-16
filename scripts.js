@@ -1,3 +1,8 @@
+
+const USD = 6.05
+const EUR = 6.36
+const GBP = 7.64
+
 const form = document.querySelector("form")
 const amount = document.getElementById("amount")
 const currency = document.getElementById("currency")
@@ -43,4 +48,11 @@ function convertCurrency(amount, price, symbol) {
     footer.classList.remove("show-result")
     console.alert("Não foi possível converter. Tente mais tarde")
   }
+}
+
+function formatCurrencyBRL(value) {
+  return Number(value).toLocaleString("pt-BR", {
+    style: "decimal",
+    currency: "BRL",
+  })
 }
